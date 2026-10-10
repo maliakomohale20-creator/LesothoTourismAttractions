@@ -1,0 +1,955 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="The story, culture and facts of Lesotho.">
+<title>About | Kingdom in the Sky - Lesotho</title>
+
+
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet">
+
+
+<style>
+
+:root {
+  --indigo: #1d2b64;      
+  --ochre: #e0a526;       
+  --terracotta: #b8442c; 
+  --cream: #fbf5e6;       
+  --ink: #22223b;         
+  --card: #ffffff;        
+  --soft: #f1e7cf;       
+}
+
+
+body.dark-mode {
+  --cream: #12162b;
+  --ink: #f3ecd9;
+  --card: #1d2342;
+  --soft: #262d54;
+}
+
+
+body {
+  background-color: var(--cream);
+  color: var(--ink);
+  font-family: 'Nunito', Arial, sans-serif;
+  font-size: 1.05rem;
+  line-height: 1.7;
+  transition: background-color 0.4s, color 0.4s;
+}
+h1, h2, h3, h4, .navbar-brand {
+  font-family: 'Playfair Display', Georgia, serif;
+}
+h2 { font-weight: 700; }
+a { color: var(--terracotta); }
+body.dark-mode a:not(.btn):not(.nav-link) { color: var(--ochre); }
+
+
+.skip-link {
+  position: absolute; left: -999px; top: 0;
+  background: var(--ochre); color: var(--indigo); padding: 8px 14px; z-index: 3000;
+}
+.skip-link:focus { left: 10px; }
+
+
+.navbar { background-color: var(--indigo); padding: 0.6rem 0; }
+.navbar-brand { color: #fff !important; font-size: 1.5rem; }
+.navbar-brand span { color: var(--ochre); }
+.navbar .nav-link {
+  color: #fff;
+  border-bottom: 3px solid transparent;
+  margin: 0 4px;
+  transition: 0.3s;
+}
+.navbar .nav-link:hover,
+.navbar .nav-link.active { color: var(--ochre); border-bottom-color: var(--ochre); }
+.navbar-toggler { background-color: #fff; }
+
+.btn-sky {
+  background-color: var(--ochre); color: var(--indigo);
+  font-weight: bold; border: none; border-radius: 30px; padding: 8px 22px;
+  transition: 0.3s;
+}
+.btn-sky:hover { background-color: var(--terracotta); color: #fff; transform: translateY(-2px); }
+
+.btn-indigo {
+  background-color: var(--indigo); color: #fff;
+  border-radius: 30px; padding: 8px 22px; border: 2px solid var(--indigo);
+  transition: 0.3s;
+}
+.btn-indigo:hover { background-color: transparent; color: var(--indigo); }
+body.dark-mode .btn-indigo:hover { color: #fff; border-color: #fff; }
+
+.btn-outline-sky {
+  border: 2px solid var(--indigo); color: var(--indigo);
+  border-radius: 30px; background: transparent; transition: 0.3s;
+}
+.btn-outline-sky:hover, .btn-outline-sky.active { background-color: var(--indigo); color: #fff; }
+body.dark-mode .btn-outline-sky { border-color: var(--ochre); color: var(--ochre); }
+body.dark-mode .btn-outline-sky:hover,
+body.dark-mode .btn-outline-sky.active { background-color: var(--ochre); color: var(--indigo); }
+
+
+.page-hero {
+  min-height: 260px;
+  display: flex; align-items: center;
+  color: #fff;
+  background-size: cover; background-position: center;
+}
+.page-hero h1 { font-size: 3rem; font-weight: 700; text-shadow: 2px 2px 8px rgba(0,0,0,0.6); }
+.page-hero p { text-shadow: 1px 1px 6px rgba(0,0,0,0.7); }
+
+
+.carousel-item img { height: 480px; object-fit: cover; }
+.carousel-caption {
+  background: rgba(29, 43, 100, 0.75);
+  border-left: 6px solid var(--ochre);
+  border-radius: 8px; padding: 14px 20px;
+  left: 8%; right: 8%;
+}
+
+
+.card {
+  --bs-card-bg: var(--card);
+  color: var(--ink);
+  border: none;
+  border-top: 5px solid var(--ochre);
+  border-radius: 14px;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.12);
+  transition: transform 0.3s, box-shadow 0.3s;
+  overflow: hidden;
+}
+.card:hover { transform: translateY(-6px); box-shadow: 0 10px 22px rgba(0, 0, 0, 0.25); }
+.card img { height: 190px; object-fit: cover; }
+
+.heart-btn { background: none; border: none; font-size: 1.5rem; color: var(--terracotta); padding: 0; }
+.heart-btn:hover { transform: scale(1.25); }
+
+
+.soft-section { background-color: var(--soft); }
+.info-box {
+  background-color: var(--card);
+  border-left: 6px solid var(--terracotta);
+  border-radius: 10px; padding: 20px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+.section-title { position: relative; padding-bottom: 12px; margin-bottom: 28px; }
+.section-title::after {
+  content: ""; position: absolute; left: 0; bottom: 0;
+  width: 70px; height: 5px; border-radius: 3px; background: var(--terracotta);
+}
+
+.counter-box { text-align: center; padding: 18px; }
+.counter { font-family: 'Playfair Display', serif; font-size: 2.6rem; font-weight: bold; color: var(--terracotta); }
+body.dark-mode .counter { color: var(--ochre); }
+
+
+.table {
+  --bs-table-bg: var(--card);
+  --bs-table-color: var(--ink);
+  --bs-table-striped-bg: var(--soft);
+  --bs-table-striped-color: var(--ink);
+  --bs-table-border-color: var(--soft);
+}
+.table thead th { background-color: var(--indigo); color: #fff; }
+
+
+.form-control, .form-select {
+  background-color: var(--card); color: var(--ink);
+  border: 2px solid var(--soft); border-radius: 10px;
+}
+.form-control:focus, .form-select:focus {
+  background-color: var(--card); color: var(--ink);
+  border-color: var(--ochre); box-shadow: 0 0 0 0.2rem rgba(224, 165, 38, 0.35);
+}
+.form-label { font-weight: bold; }
+.form-box { background-color: var(--card); border-radius: 14px; padding: 26px; border-top: 5px solid var(--terracotta); box-shadow: 0 3px 10px rgba(0,0,0,0.12); }
+
+
+.accordion {
+  --bs-accordion-bg: var(--card);
+  --bs-accordion-color: var(--ink);
+  --bs-accordion-btn-bg: var(--card);
+  --bs-accordion-btn-color: var(--ink);
+  --bs-accordion-active-bg: var(--soft);
+  --bs-accordion-active-color: var(--ink);
+  --bs-accordion-border-color: var(--soft);
+}
+.modal-content { background-color: var(--card); color: var(--ink); border-radius: 14px; border-top: 6px solid var(--ochre); }
+body.dark-mode .btn-close { filter: invert(1); }
+.dropdown-menu { background-color: var(--card); }
+.dropdown-item { color: var(--ink); }
+.dropdown-item:hover { background-color: var(--ochre); color: var(--indigo); }
+
+
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(230px, 1fr));
+  gap: 16px;
+}
+.photo-img {
+  width: 100%; height: 210px; object-fit: cover;
+  border-radius: 12px; cursor: pointer;
+  border: 4px solid var(--card);
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+.photo-img:hover { transform: scale(1.04) rotate(-1deg); box-shadow: 0 8px 18px rgba(0, 0, 0, 0.35); }
+#lightImg { max-height: 65vh; width: 100%; object-fit: contain; }
+
+
+.total-box {
+  background-color: var(--indigo); color: #fff;
+  border-radius: 14px; padding: 22px; border-bottom: 6px solid var(--ochre);
+}
+.total-box .big { font-family: 'Playfair Display', serif; font-size: 2.2rem; color: var(--ochre); }
+
+/* ---------- 16. FOOTER ---------- */
+footer { background-color: var(--indigo); color: #fff; }
+footer a { color: #fff !important; text-decoration: none; }
+footer a:hover { color: var(--ochre) !important; }
+
+
+#topBtn {
+  position: fixed; right: 18px; bottom: 18px; display: none; z-index: 2000;
+  width: 46px; height: 46px; border-radius: 50%;
+  background-color: var(--terracotta); color: #fff; border: none; font-size: 1.3rem;
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.4);
+}
+#topBtn:hover { background-color: var(--ochre); color: var(--indigo); }
+
+
+@media (max-width: 768px) {
+  .page-hero { min-height: 200px; }
+  .page-hero h1 { font-size: 2.1rem; }
+  .carousel-item img { height: 320px; }
+  .carousel-caption { left: 4%; right: 4%; padding: 8px 12px; }
+  .carousel-caption p { display: none; }
+}
+@media (min-width: 1400px) {
+  .carousel-item img { height: 560px; }
+}
+
+</style>
+</head>
+
+<body>
+<a class="skip-link" href="#content">Skip to main content</a>
+
+
+<header>
+  <nav class="navbar navbar-expand-xl" aria-label="Main menu">
+    <div class="container">
+      <a class="navbar-brand" href="index.html">Lesotho<span> | Kingdom in the Sky</span></a>
+      <button class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#menu" aria-label="Open menu">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="menu">
+        <ul class="navbar-nav mx-auto">
+          <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+          <li class="nav-item"><a class="nav-link active" href="about.html" aria-current="page">About</a></li>
+          <li class="nav-item"><a class="nav-link" href="destinations.html">Destinations</a></li>
+          <li class="nav-item"><a class="nav-link" href="accommodation.html">Accommodation</a></li>
+          <li class="nav-item"><a class="nav-link" href="activities.html">Activities</a></li>
+          <li class="nav-item"><a class="nav-link" href="gallery.html">Gallery</a></li>
+          <li class="nav-item"><a class="nav-link" href="booking.html">Booking</a></li>
+          <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+        </ul>
+        <div class="d-flex gap-2 mt-2 mt-xl-0">
+          <button class="btn btn-sm btn-sky" onclick="showTrip()"><i class="bi bi-heart-fill"></i> My Trip <span class="badge bg-light text-dark trip-count">0</span></button>
+          <button class="btn btn-sm btn-outline-light rounded-pill" id="modeBtn" onclick="changeMode()">Dark</button>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+</header>
+
+<main id="content">
+  <section class="page-hero" style="background-image: linear-gradient(rgba(29,43,100,0.55), rgba(0,0,0,0.45)), url('lesotho.jpg');">
+    <div class="container">
+      <h1>About Lesotho</h1>
+      <p class="fs-5 mb-0">A small country with a big heart.</p>
+    </div>
+  </section>
+
+  <section class="py-5">
+    <div class="container">
+      <div class="row align-items-center g-4">
+        <div class="col-md-6"><img src="original.avif" class="img-fluid rounded shadow" alt="Mountains of Lesotho"></div>
+        <article class="col-md-6">
+          <h2 class="section-title">Our Story</h2>
+          <p>Lesotho is a mountain kingdom completely surrounded by South Africa. It became a nation in the 1820s under
+          King Moshoeshoe I, who gathered his people on the safe mountain of Thaba Bosiu.</p>
+          <p>Today it is one of the smallest countries in Africa, with a big heart and a unique identity.
+          Every road climbs, every view opens wide.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="soft-section py-5">
+    <div class="container">
+      <div class="row align-items-center g-4">
+        <article class="col-md-6 order-md-1">
+          <h2 class="section-title">Our Culture</h2>
+          <ul class="list-unstyled fs-5">
+            <li class="mb-3"><i class="bi bi-person-arms-up me-2 text-danger"></i>Traditional Basotho dress: the blanket and the <i>mokorotlo</i> hat</li>
+            <li class="mb-3"><i class="bi bi-balloon-heart me-2 text-danger"></i>Festivals and ceremonies through the year</li>
+            <li class="mb-3"><i class="bi bi-music-note-beamed me-2 text-danger"></i>Music, singing and dance</li>
+            <li class="mb-3"><i class="bi bi-people-fill me-2 text-danger"></i>Warm and welcoming people</li>
+          </ul>
+        </article>
+        <div class="col-md-6"><img src="basotho.webp" class="img-fluid rounded shadow" alt="Basotho people in traditional blankets and hats"></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-5">
+    <div class="container">
+      <div class="row g-4">
+        <div class="col-lg-8">
+          <h2 class="section-title">Lesotho at a glance</h2>
+          <div class="table-responsive">
+            <table class="table table-striped">
+              <caption>Quick facts about Lesotho</caption>
+              <thead><tr><th scope="col">Topic</th><th scope="col">Fact</th></tr></thead>
+              <tbody>
+                <tr><th scope="row">Capital city</th><td>Maseru</td></tr>
+                <tr><th scope="row">Languages</th><td>Sesotho and English</td></tr>
+                <tr><th scope="row">Currency</th><td>Loti (plural: Maloti), shown as M</td></tr>
+                <tr><th scope="row">Area</th><td>About 30,000 square kilometres</td></tr>
+                <tr><th scope="row">Highest point</th><td>Thabana Ntlenyana, 3,482 m</td></tr>
+                <tr><th scope="row">Best time to visit</th><td>September to May for hiking, June to August for snow</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <aside class="col-lg-4" aria-label="Basic Sesotho words">
+          <div class="info-box">
+            <h3 class="fs-4">Say it in Sesotho</h3>
+            <ol class="mb-0">
+              <li><b>Lumela</b> = Hello</li>
+              <li><b>U phela joang?</b> = How are you?</li>
+              <li><b>Kea leboha</b> = Thank you</li>
+              <li><b>Sala hantle</b> = Goodbye (stay well)</li>
+            </ol>
+          </div>
+        </aside>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<div class="modal fade" id="infoModal" tabindex="-1" aria-labelledby="modalTitle" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h3 class="modal-title fs-4" id="modalTitle"></h3>
+        <button class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <img id="modalImg" class="img-fluid rounded mb-3" alt="">
+        <p id="modalText"></p>
+      </div>
+      <div class="modal-footer">
+        <a href="booking.html" class="btn btn-sky">Book a trip</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<div class="modal fade" id="tripModal" tabindex="-1" aria-labelledby="tripTitle" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h3 class="modal-title fs-4" id="tripTitle">My Trip</h3>
+        <button class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body" id="tripList"></div>
+      <div class="modal-footer">
+        <button class="btn btn-outline-danger btn-sm" onclick="clearTrip()">Clear all</button>
+        <a href="booking.html" class="btn btn-sky">Book my trip</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<button id="topBtn" onclick="goToTop()" aria-label="Back to top"><i class="bi bi-arrow-up"></i></button>
+
+
+<footer class="pt-5 pb-3">
+  <div class="blanket-stripe mb-4"></div>
+  <div class="container">
+    <div class="row g-4">
+      <section class="col-md-4">
+        <h2 class="fs-4">Lesotho</h2>
+        <p class="small">The Kingdom in the Sky: a land of mountains, waterfalls, ponies and warm people.</p>
+        <a href="#" class="fs-4 me-2" aria-label="Facebook"><i class="bi bi-facebook"></i></a>
+        <a href="#" class="fs-4 me-2" aria-label="Instagram"><i class="bi bi-instagram"></i></a>
+        <a href="#" class="fs-4 me-2" aria-label="YouTube"><i class="bi bi-youtube"></i></a>
+      </section>
+
+      <section class="col-md-4">
+        <h2 class="fs-5">Contact</h2>
+        <ul class="list-unstyled small">
+          <li><i class="bi bi-telephone-fill"></i> +266 2231 2345</li>
+          <li><i class="bi bi-envelope-fill"></i> info@knowmoreaboutlesotho.co.ls</li>
+          <li><i class="bi bi-geo-alt-fill"></i> Maseru, Lesotho</li>
+        </ul>
+      </section>
+    </div>
+    <hr>
+    <p class="mb-0 text-center small">&copy; 2026 Kingdom in the Sky </p>
+  </div>
+</footer>
+
+<!-- Bootstrap JavaScript, then my own JavaScript -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<!-- My own JavaScript -->
+<script>
+/* =====================================================
+   KINGDOM IN THE SKY - Lesotho Tourism
+   One JavaScript file used by every page.
+   Each feature first checks that its element exists on
+   the page, so the same file works everywhere.
+
+   FEATURES (numbered so they are easy to explain):
+    1. Dark / Light mode            (localStorage)
+    2. Pop-up window (modal)
+    3. "My Trip" list - hearts      (localStorage)
+    4. Destinations: dynamic cards + search + filter + sort
+    5. Gallery filter + lightbox with next / previous
+    6. Form validation helper
+    7. Contact form
+    8. Booking form + cost calculator
+    9. Daily tip (dynamic content)
+   10. Live weather (Fetch API)
+   11. Counters, back-to-top button
+   ===================================================== */
+
+
+/* ---------- 1. DARK / LIGHT MODE ---------- */
+// Runs straight away: if the visitor chose dark mode before, switch it on again
+if (localStorage.getItem("mode") == "dark") {
+  document.body.classList.add("dark-mode");
+}
+
+function changeMode() {
+  document.body.classList.toggle("dark-mode");
+  if (document.body.classList.contains("dark-mode")) {
+    localStorage.setItem("mode", "dark");
+  } else {
+    localStorage.setItem("mode", "light");
+  }
+  updateModeButton();
+}
+
+// Show a sun icon in dark mode and a moon icon in light mode
+function updateModeButton() {
+  const button = document.getElementById("modeBtn");
+  if (button) {
+    if (document.body.classList.contains("dark-mode")) {
+      button.innerHTML = '<i class="bi bi-sun-fill"></i> Light';
+    } else {
+      button.innerHTML = '<i class="bi bi-moon-stars-fill"></i> Dark';
+    }
+  }
+}
+
+
+/* ---------- 2. POP-UP WINDOW (Bootstrap modal) ---------- */
+function showInfo(title, picture, text) {
+  document.getElementById("modalTitle").textContent = title;
+  document.getElementById("modalImg").src = picture;
+  document.getElementById("modalImg").alt = title;
+  document.getElementById("modalText").textContent = text;
+  bootstrap.Modal.getOrCreateInstance(document.getElementById("infoModal")).show();
+}
+
+
+/* ---------- 3. "MY TRIP" LIST (saved in localStorage) ---------- */
+// localStorage can only keep text, so we turn the list into text with JSON.stringify
+// and back into a list with JSON.parse.
+function getTrip() {
+  return JSON.parse(localStorage.getItem("trip")) || [];
+}
+
+function saveTrip(list) {
+  localStorage.setItem("trip", JSON.stringify(list));
+  updateTripCount();
+}
+
+// Add the place if it is not in the list, remove it if it is
+function toggleTrip(name) {
+  let list = getTrip();
+  if (list.includes(name)) {
+    list = list.filter(function (item) { return item != name; });
+  } else {
+    list.push(name);
+  }
+  saveTrip(list);
+}
+
+// Update the little number badge in the menu
+function updateTripCount() {
+  const count = getTrip().length;
+  document.querySelectorAll(".trip-count").forEach(function (badge) {
+    badge.textContent = count;
+  });
+}
+
+// Fill the "My Trip" pop-up with the saved places
+function showTrip() {
+  const list = getTrip();
+  const box = document.getElementById("tripList");
+  if (list.length == 0) {
+    box.innerHTML = '<div class="alert alert-info">Your trip is empty. Click the heart on a destination to add it.</div>';
+  } else {
+    let html = '<ul class="list-group">';
+    list.forEach(function (name) {
+      html += '<li class="list-group-item d-flex justify-content-between align-items-center">' + name +
+              '<button class="btn btn-sm btn-outline-danger" onclick="removeFromTrip(\'' + name.replace("'", "\\'") + '\')">Remove</button></li>';
+    });
+    html += '</ul>';
+    box.innerHTML = html;
+  }
+  bootstrap.Modal.getOrCreateInstance(document.getElementById("tripModal")).show();
+}
+
+function removeFromTrip(name) {
+  toggleTrip(name);
+  showTrip();
+  showDestinations();   // refresh the hearts (only does something on the destinations page)
+}
+
+function clearTrip() {
+  saveTrip([]);
+  showTrip();
+  showDestinations();
+}
+
+
+/* ---------- 4. DESTINATIONS: DYNAMIC CARDS, SEARCH, FILTER, SORT ---------- */
+// The data is a list of objects (JSON style). The cards are built from it with JavaScript.
+const destinations = [
+  { name: "Kome Caves", image: "komecaves.jpg", category: "Culture", district: "Berea",
+    text: "Discover traditional cave homes carved into the rock and learn about Basotho heritage and history." },
+  { name: "Sehlabathebe National Park", image: "sehlabathebe.jpg", category: "Nature", district: "Qacha's Nek",
+    text: "Experience beautiful high-altitude landscapes, rock pools, wildlife and quiet outdoor adventures." },
+  { name: "Ts'ehlanyane", image: "tsehlanyane.jpg", category: "Nature", district: "Leribe",
+    text: "Enjoy mountain scenery, indigenous forests, waterfalls and hiking trails." },
+  { name: "Thabana Ntlenyana", image: "thabanantlenyana.jpg", category: "Adventure", district: "Mokhotlong",
+    text: "Challenge yourself with a climb to the highest point in Southern Africa." },
+  { name: "Afriski", image: "afriski.jpg", category: "Adventure", district: "Butha-Buthe",
+    text: "Enjoy skiing, snowboarding and mountain adventures at Africa's high-altitude ski resort." },
+  { name: "Maletsunyane Falls", image: "maletsunyanefalls.jpg", category: "Nature", district: "Maseru",
+    text: "Visit one of the most spectacular waterfalls in Southern Africa, dropping about 192 metres." },
+  { name: "Katse Dam", image: "katsedam.jpg", category: "Nature", district: "Thaba-Tseka",
+    text: "See one of the highest dams in Africa, surrounded by dramatic mountains and scenic viewpoints." },
+  { name: "Thaba Bosiu", image: "thababosiu.jpg", category: "Culture", district: "Maseru",
+    text: "Walk the mountain stronghold where King Moshoeshoe I built the Basotho nation." }
+];
+
+let currentCategory = "All";   // the category button that is selected
+let sortOrder = "az";          // az = A to Z, za = Z to A
+
+function showDestinations() {
+  const box = document.getElementById("destList");
+  if (!box) { return; }                      // not the destinations page, do nothing
+
+  const word = document.getElementById("searchBox").value.toLowerCase().trim();
+  const trip = getTrip();
+
+  // make a sorted copy of the list
+  const sorted = destinations.slice().sort(function (a, b) {
+    if (sortOrder == "az") { return a.name.localeCompare(b.name); }
+    return b.name.localeCompare(a.name);
+  });
+
+  let html = "";
+  let count = 0;
+  sorted.forEach(function (d) {
+    const matchesSearch = d.name.toLowerCase().includes(word) || d.text.toLowerCase().includes(word) ||
+                          d.district.toLowerCase().includes(word);
+    const matchesCategory = (currentCategory == "All" || d.category == currentCategory);
+    if (matchesSearch && matchesCategory) {
+      const index = destinations.indexOf(d);
+      const heart = trip.includes(d.name) ? "bi-heart-fill" : "bi-heart";
+      html += '<div class="col-md-6 col-lg-4"><article class="card h-100">' +
+                '<img src="' + d.image + '" alt="' + d.name + '">' +
+                '<div class="card-body d-flex flex-column">' +
+                  '<span class="badge bg-warning text-dark align-self-start mb-2">' + d.category + '</span>' +
+                  '<h3 class="fs-4">' + d.name + '</h3>' +
+                  '<p class="small mb-1"><i class="bi bi-geo-alt-fill"></i> ' + d.district + ' District</p>' +
+                  '<p class="small flex-grow-1">' + d.text + '</p>' +
+                  '<div class="d-flex justify-content-between align-items-center">' +
+                    '<button class="btn btn-sm btn-indigo" onclick="openDestination(' + index + ')">Learn More</button>' +
+                    '<button class="heart-btn" aria-label="Add ' + d.name + ' to my trip" onclick="heartClicked(' + index + ')"><i class="bi ' + heart + '"></i></button>' +
+                  '</div>' +
+                '</div></article></div>';
+      count++;
+    }
+  });
+
+  if (count == 0) {
+    html = '<div class="col-12"><div class="alert alert-warning">No destinations found. Try another word or category.</div></div>';
+  }
+  box.innerHTML = html;
+  document.getElementById("resultCount").textContent = count + " destination(s) found";
+}
+
+function openDestination(index) {
+  const d = destinations[index];
+  showInfo(d.name, d.image, d.text);
+}
+
+function heartClicked(index) {
+  toggleTrip(destinations[index].name);
+  showDestinations();
+}
+
+function setCategory(category, clickedButton) {
+  currentCategory = category;
+  // colour only the clicked button
+  document.querySelectorAll(".filter-btn").forEach(function (b) { b.classList.remove("active"); });
+  clickedButton.classList.add("active");
+  showDestinations();
+}
+
+function setSort(order, label) {
+  sortOrder = order;
+  document.getElementById("sortLabel").textContent = label;
+  showDestinations();
+}
+
+
+/* ---------- 5. GALLERY: FILTER + LIGHTBOX ---------- */
+let lightList = [];    // the photos that are currently visible
+let lightPos = 0;      // which one is open
+
+function filterPhotos(category, clickedButton) {
+  document.querySelectorAll(".filter-btn").forEach(function (b) { b.classList.remove("active"); });
+  clickedButton.classList.add("active");
+
+  document.querySelectorAll(".photo").forEach(function (photo) {
+    if (category == "All" || photo.dataset.category == category) {
+      photo.style.display = "block";
+    } else {
+      photo.style.display = "none";
+    }
+  });
+}
+
+function openLightbox(clickedPhoto) {
+  // collect only the visible photos, then find the one that was clicked
+  lightList = Array.from(document.querySelectorAll(".photo")).filter(function (p) {
+    return p.style.display != "none";
+  });
+  lightPos = lightList.indexOf(clickedPhoto.parentElement);
+  showLightPhoto();
+  bootstrap.Modal.getOrCreateInstance(document.getElementById("lightbox")).show();
+}
+
+function showLightPhoto() {
+  const img = lightList[lightPos].querySelector("img");
+  document.getElementById("lightImg").src = img.src;
+  document.getElementById("lightImg").alt = img.alt;
+  document.getElementById("lightCaption").textContent = img.alt;
+  document.getElementById("lightCount").textContent = (lightPos + 1) + " / " + lightList.length;
+}
+
+function nextPhoto() {
+  lightPos = (lightPos + 1) % lightList.length;                          // after the last one, go back to the first
+  showLightPhoto();
+}
+
+function prevPhoto() {
+  lightPos = (lightPos - 1 + lightList.length) % lightList.length;       // before the first one, go to the last
+  showLightPhoto();
+}
+
+// Keyboard arrows also change the photo
+document.addEventListener("keydown", function (event) {
+  const lightbox = document.getElementById("lightbox");
+  if (lightbox && lightbox.classList.contains("show")) {
+    if (event.key == "ArrowRight") { nextPhoto(); }
+    if (event.key == "ArrowLeft") { prevPhoto(); }
+  }
+});
+
+
+/* ---------- 6. FORM VALIDATION HELPERS ---------- */
+// check() marks one field green (valid) or red (invalid) and shows the error text.
+// It returns true or false so we can see if the whole form is correct.
+function check(id, isOk, message) {
+  const field = document.getElementById(id);
+  const error = document.getElementById(id + "Error");
+  if (isOk) {
+    field.classList.remove("is-invalid");
+    field.classList.add("is-valid");
+  } else {
+    field.classList.remove("is-valid");
+    field.classList.add("is-invalid");
+    error.textContent = message;
+  }
+  return isOk;
+}
+
+// remove the green / red marks (used after a successful submit)
+function clearMarks(form) {
+  form.querySelectorAll(".is-valid, .is-invalid").forEach(function (f) {
+    f.classList.remove("is-valid", "is-invalid");
+  });
+}
+
+function validEmail(email) {
+  // something@something.something with no spaces
+  return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+}
+
+function validPhone(phone) {
+  // Lesotho number: 8 digits starting with 2, 5 or 6, optional +266
+  const clean = phone.replace(/\s/g, "");
+  return /^(\+266)?[256][0-9]{7}$/.test(clean);
+}
+
+function showAlert(boxId, type, text) {
+  document.getElementById(boxId).innerHTML = '<div class="alert alert-' + type + ' mt-3">' + text + '</div>';
+}
+
+
+/* ---------- 7. CONTACT FORM ---------- */
+function sendMessage(event) {
+  event.preventDefault();                      // stop the page from reloading
+
+  const name = document.getElementById("cName").value.trim();
+  const email = document.getElementById("cEmail").value.trim();
+  const phone = document.getElementById("cPhone").value.trim();
+  const subject = document.getElementById("cSubject").value;
+  const message = document.getElementById("cMessage").value.trim();
+
+  // run every check (no "&&" short-cut, so all errors show at once)
+  const results = [
+    check("cName", name.length >= 3, "Please enter your name (at least 3 letters)."),
+    check("cEmail", validEmail(email), "Please enter a valid email, e.g. name@mail.com"),
+    check("cPhone", phone == "" || validPhone(phone), "Phone must be 8 digits starting with 2, 5 or 6 (e.g. 5812 3456)."),
+    check("cSubject", subject != "", "Please choose a subject."),
+    check("cMessage", message.length >= 10, "Your message must be at least 10 characters.")
+  ];
+
+  if (results.includes(false)) {
+    showAlert("cResult", "danger", "Please fix the red fields and try again.");
+  } else {
+    showAlert("cResult", "success", "Thank you, " + name + "! Your message about <b>" + subject + "</b> has been sent. We will reply soon.");
+    localStorage.setItem("lastName", name);
+    document.getElementById("contactForm").reset();
+    clearMarks(document.getElementById("contactForm"));
+  }
+}
+
+
+/* ---------- 8. BOOKING FORM + COST CALCULATOR ---------- */
+function money(number) {
+  return "M " + number.toLocaleString();    // M = Maloti, the money of Lesotho
+}
+
+// Reads the form, works out the cost, and writes it in the table
+function calculateTotal() {
+  const form = document.getElementById("bookingForm");
+  if (!form) { return 0; }
+
+  // the price is stored in each <option> in a data-price attribute
+  const tourPrice = Number(document.getElementById("bTour").selectedOptions[0].dataset.price);
+  const stayPrice = Number(document.getElementById("bStay").selectedOptions[0].dataset.price);
+  const people = Number(document.getElementById("bPeople").value) || 0;
+  const nights = Number(document.getElementById("bNights").value) || 0;
+  const rooms = Math.ceil(people / 2);                       // 2 people share a room
+
+  const tourCost = tourPrice * people;
+  const stayCost = stayPrice * nights * rooms;
+  const guideCost = document.getElementById("bGuide").checked ? 300 : 0;
+  const horseCost = document.getElementById("bHorse").checked ? 150 * people : 0;
+  const total = tourCost + stayCost + guideCost + horseCost;
+
+  document.getElementById("rowTour").textContent = money(tourCost);
+  document.getElementById("rowStay").textContent = money(stayCost);
+  document.getElementById("rowGuide").textContent = money(guideCost);
+  document.getElementById("rowHorse").textContent = money(horseCost);
+  document.getElementById("rowTotal").textContent = money(total);
+  document.getElementById("rowRooms").textContent = rooms;
+  return total;
+}
+
+function sendBooking(event) {
+  event.preventDefault();
+
+  const name = document.getElementById("bName").value.trim();
+  const email = document.getElementById("bEmail").value.trim();
+  const phone = document.getElementById("bPhone").value.trim();
+  const date = document.getElementById("bDate").value;
+  const people = Number(document.getElementById("bPeople").value);
+  const nights = Number(document.getElementById("bNights").value);
+  const tour = document.getElementById("bTour").value;
+  const agree = document.getElementById("bAgree");
+
+  // the chosen date must be today or later
+  const today = new Date().toISOString().split("T")[0];
+
+  const results = [
+    check("bName", name.length >= 3, "Please enter your full name (at least 3 letters)."),
+    check("bEmail", validEmail(email), "Please enter a valid email address."),
+    check("bPhone", validPhone(phone), "Phone must be 8 digits starting with 2, 5 or 6 (e.g. 5812 3456)."),
+    check("bTour", tour != "", "Please choose a destination."),
+    check("bDate", date != "" && date >= today, "Please choose a date from today onwards."),
+    check("bPeople", people >= 1 && people <= 20, "Number of people must be between 1 and 20."),
+    check("bNights", nights >= 1 && nights <= 14, "Nights must be between 1 and 14.")
+  ];
+  if (!agree.checked) {
+    agree.classList.add("is-invalid");
+    results.push(false);
+  } else {
+    agree.classList.remove("is-invalid");
+  }
+
+  if (results.includes(false)) {
+    showAlert("bResult", "danger", "Please fix the red fields and try again.");
+    return;
+  }
+
+  // everything is correct: make a booking number and save the booking
+  const booking = {
+    ref: "LK-" + Math.floor(1000 + Math.random() * 9000),
+    name: name, tour: tour, date: date, people: people, total: calculateTotal()
+  };
+  localStorage.setItem("lastBooking", JSON.stringify(booking));
+  localStorage.setItem("lastName", name);
+
+  showAlert("bResult", "success",
+    "<b>Booking received!</b> Thank you, " + name + ". Your reference is <b>" + booking.ref + "</b>. " +
+    "Total estimate: <b>" + money(booking.total) + "</b>.");
+  document.getElementById("bookingForm").reset();
+  clearMarks(document.getElementById("bookingForm"));
+  calculateTotal();
+  showLastBooking();
+}
+
+// Show the previous booking (read back from localStorage)
+function showLastBooking() {
+  const box = document.getElementById("lastBooking");
+  if (!box) { return; }
+  const saved = JSON.parse(localStorage.getItem("lastBooking"));
+  if (saved) {
+    box.innerHTML = '<div class="alert alert-info"><i class="bi bi-bookmark-check-fill"></i> Last booking saved on this device: ' +
+      '<b>' + saved.ref + '</b> - ' + saved.tour + ' for ' + saved.people + ' on ' + saved.date + '.</div>';
+  } else {
+    box.innerHTML = "";
+  }
+}
+
+
+/* ---------- 9. TIP OF THE DAY (dynamic content) ---------- */
+const tips = [
+  "Pack warm clothes - even in summer the mountain nights can be cold.",
+  "A Basotho blanket is both a coat and a symbol of respect. Ask before taking photos of people.",
+  "Pony trekking is the best way to reach villages that roads cannot.",
+  "Greet people with \"Lumela\" (hello) - it will always get a smile.",
+  "Winter (June to August) brings snow to the highlands - perfect for Afriski.",
+  "Carry cash in Maloti when you visit remote villages and camps.",
+  "Start hikes early in the morning - afternoon thunderstorms are common in summer."
+];
+
+function newTip() {
+  const box = document.getElementById("tipText");
+  if (box) {
+    const random = Math.floor(Math.random() * tips.length);
+    box.textContent = tips[random];
+  }
+}
+
+
+/* ---------- 10. LIVE WEATHER (Fetch API) ---------- */
+// Asks a free weather service for the temperature in Maseru.
+function loadWeather() {
+  const box = document.getElementById("weatherBox");
+  if (!box) { return; }
+  fetch("https://api.open-meteo.com/v1/forecast?latitude=-29.31&longitude=27.48&current_weather=true")
+    .then(function (response) { return response.json(); })
+    .then(function (data) {
+      box.innerHTML = '<i class="bi bi-thermometer-half"></i> Maseru right now: <b>' +
+        data.current_weather.temperature + ' &deg;C</b>, wind ' + data.current_weather.windspeed + ' km/h';
+    })
+    .catch(function () {
+      box.textContent = "Weather is not available right now.";
+    });
+}
+
+
+/* ---------- 11. COUNTERS + BACK-TO-TOP BUTTON ---------- */
+// Numbers that count up from 0 to the value written in data-target
+function runCounters() {
+  document.querySelectorAll(".counter").forEach(function (counter) {
+    const target = Number(counter.dataset.target);
+    let current = 0;
+    const step = Math.ceil(target / 60);
+    const timer = setInterval(function () {
+      current += step;
+      if (current >= target) {
+        current = target;
+        clearInterval(timer);
+      }
+      counter.textContent = current.toLocaleString();
+    }, 25);
+  });
+}
+
+function goToTop() {
+  window.scrollTo({ top: 0, behavior: "smooth" });
+}
+
+window.addEventListener("scroll", function () {
+  const button = document.getElementById("topBtn");
+  if (button) {
+    button.style.display = (window.scrollY > 300) ? "block" : "none";
+  }
+});
+
+
+/* ---------- START: runs when the page has loaded ---------- */
+document.addEventListener("DOMContentLoaded", function () {
+  updateModeButton();
+  updateTripCount();
+  runCounters();
+  newTip();
+  loadWeather();
+  showDestinations();
+  showLastBooking();
+
+  // booking page: recalculate the total every time the form changes
+  const bookingForm = document.getElementById("bookingForm");
+  if (bookingForm) {
+    document.getElementById("bDate").min = new Date().toISOString().split("T")[0];
+    bookingForm.addEventListener("input", calculateTotal);
+    calculateTotal();
+    // skip typing if the visitor booked before: pre-fill the name
+    if (localStorage.getItem("lastName")) {
+      document.getElementById("bName").value = localStorage.getItem("lastName");
+    }
+  }
+
+  // contact page: welcome the visitor back
+  const welcome = document.getElementById("welcomeBack");
+  if (welcome && localStorage.getItem("lastName")) {
+    welcome.innerHTML = '<div class="alert alert-success">Welcome back, <b>' + localStorage.getItem("lastName") + '</b>!</div>';
+  }
+});
+
+</script>
+</body>
+</html>
